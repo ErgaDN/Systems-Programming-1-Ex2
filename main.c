@@ -7,13 +7,15 @@ int main() {
     while (chooseMethod != 'D') {
         if (chooseMethod == 'A') {
             getForMat();
-        } else if (chooseMethod == 'B') {
-            int i, j = 0;
+        } 
+        else if (chooseMethod == 'B') {
+            int i, j;
             scanf("%d", &i);
             scanf("%d", &j);
             routeExists(i, j);
-        } else if (chooseMethod == 'C') {
-            int i, j = 0;
+        } 
+        else if (chooseMethod == 'C') {
+            int i, j;
             scanf("%d", &i);
             scanf("%d", &j);
             shortRoute(i, j);

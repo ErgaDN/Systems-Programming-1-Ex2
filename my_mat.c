@@ -6,19 +6,20 @@
 int arr[10][10] = {0};
 
 void getForMat (){
-    for (int i = 0; 1 < sizeof(arr) ; i++) {
-        for (int j = 0 ; j < sizeof(arr) ; j++) {
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0 ; j < 10 ; j++) {
             scanf("%d" , &arr[i][j]);
         }
     }
-    //floydWarshall();
+    
+    floydWarshall();
 }
    
 
 void floydWarshall (){
-    for (int k = 1 ; k < sizeof(arr) ; k++) {
-        for (int i = 1 ; i < sizeof(arr) ; i++) {
-            for (int j = 1 ; j < sizeof(arr) ; j++) {
+    for (int k = 0 ; k < sizeof(arr) ; k++) {
+        for (int i = 0 ; i < sizeof(arr) ; i++) {
+            for (int j = 0 ; j < sizeof(arr) ; j++) {
                 if ((arr[i][j] == 0 && arr[i][k] == 0) || (arr[i][j] == 0 && arr[k][j] == 0)) {
                     arr[i][j] = 0;
                 } else if (arr[i][j] == 0) {

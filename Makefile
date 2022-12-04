@@ -5,13 +5,13 @@ OBJECTS_MAIN = main.o
 MAIN = arrayMemoryLeak
 
 
-all: connections libmy_mat.a
+all: libmy_mat.a connections
 
 connections: $(OBJECTS_MAIN) libmy_mat.a
 	$(CC) $(FLAGS) -o connections $(OBJECTS_MAIN) libmy_mat.a -lm
 
 libmy_mat.a: my_mat.o 
-	$(AR) -rsc libmy_mat.a my_mat.o
+	$(AR) -rcs libmy_mat.a my_mat.o
 
 
 OBJECTS_MAIN: main.c my_mat.h
@@ -27,5 +27,5 @@ valgrind:
 .PHONY: clean all
 
 clean:
-	rm -f *.o mains
+	rm -f *.o *.a connections
 
