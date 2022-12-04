@@ -20,11 +20,15 @@ void floydWarshall (){
     for (int k = 0 ; k < 10 ; k++) {
         for (int i = 0 ; i < 10 ; i++) {
             for (int j = 0 ; j < 10 ; j++) {
+                if (i == j) {
+                    continue;
+                }
                 if ((arr[i][j] == 0 && arr[i][k] == 0) || (arr[i][j] == 0 && arr[k][j] == 0)) {
                     arr[i][j] = 0;
                 } else if (arr[i][j] == 0) {
                     arr[i][j] = arr[i][k] + arr[k][j];
-                } else if (arr[i][k] + arr[k][j] == 0) {
+                }
+                 else if (arr[i][k] == 0 || arr[k][j] == 0) {
                      arr[i][j] =  arr[i][j];
                 } else {
                     if(arr[i][j]  > (arr[i][k] + arr[k][j])) {
