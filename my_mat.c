@@ -2,9 +2,11 @@
 #include <math.h>
 #include "my_mat.h"
 
-
+// Global matrix initialization
 int arr[10][10] = {0};
 
+// The function accepts variables and puts them into the matrix.
+// The matrix is sent to the function floydWarshall().
 void getForMat (){
     for (int i = 0; i < 10; i++) {
         for (int j = 0 ; j < 10 ; j++) {
@@ -16,6 +18,8 @@ void getForMat (){
 }
    
 
+// The function runs the Floyd Warshall algorithm on the matrix, 
+// which updates the matrix according to the route with the smallest weight.
 void floydWarshall (){
     for (int k = 0 ; k < 10 ; k++) {
         for (int i = 0 ; i < 10 ; i++) {
@@ -40,6 +44,8 @@ void floydWarshall (){
     }
 }
 
+
+// The futction will return True if the route from i to j are exists. Else, it will return False.
 void routeExists (int i, int j) {
     if ( arr[i][j] == 0) {
         printf("False\n");
@@ -48,6 +54,9 @@ void routeExists (int i, int j) {
     }
 }
 
+
+// The function will return the smallest wight for the route from i to j.
+// If no such route exists, the function will return -1.
 void shortRoute (int i, int j) {
     if (arr[i][j] == 0) {
         printf("-1\n");
